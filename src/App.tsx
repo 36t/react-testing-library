@@ -5,6 +5,7 @@ import './App.css'
 import Render from './component/Render'
 import RenderInput from './component/RenderInput'
 import FrameworkList, { Framework } from './component/FrameworkList'
+import UserEffectRender from './component/UserEffectRender'
 
 const App: React.FC = () => {
   // RenderInputコンポーネントにpropsで送る
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Render />
         <RenderInput outputConsole={output} />
         <FrameworkList frameworks={frameworkList} />
+        <UserEffectRender />
       </header>
     </div>
   )
