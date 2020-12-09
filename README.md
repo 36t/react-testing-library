@@ -29,6 +29,9 @@ yarn lint:fix
 1. Rendering test sample
     - component: [react\-testing\-library/Render\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/Render.tsx)
     - test: [react\-testing\-library/Render\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/Render.test.tsx)
-2. UserEvent test sample
+2. UserEvent test sample (use props)
     - component: [react\-testing\-library/RenderInput\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/RenderInput.test.tsx)
     - test: [react\-testing\-library/RenderInput\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/RenderInput.test.tsx)
+3. List component test sample (use props)
+    - component: [react\-testing\-library/FrameworkList\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/FrameworkList.tsx)
+    - test: [react\-testing\-library/FrameworkList\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/FrameworkList.test.tsx)
