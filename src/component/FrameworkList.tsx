@@ -1,12 +1,12 @@
 import React from 'react'
 
-type Framework = {
+export type Framework = {
   id: number
   item: string
 }
 
 type Props = {
-  frameworks: Framework[]
+  frameworks?: Framework[]
 }
 
 const FrameworkList: React.FC<Props> = (list: Props) => {
