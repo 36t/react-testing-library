@@ -8,6 +8,7 @@ const Render: React.FC = () => {
       <button>Click1</button>
       <button>Click2</button>
       <span>@React</span>
+      <span data-testid="copyright">copyright</span>
     </div>
   )
 }
