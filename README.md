@@ -35,3 +35,6 @@ yarn lint:fix
 3. List component test sample (use props)
     - component: [react\-testing\-library/FrameworkList\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/FrameworkList.tsx)
     - test: [react\-testing\-library/FrameworkList\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/FrameworkList.test.tsx)
+4. Use effect test sample (use axios)
+    - component: [react\-testing\-library/UseEffectRender\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/UseEffectRender.tsx)
+    - test: [react\-testing\-library/UseEffectRender\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/UseEffectRender.test.tsx)
