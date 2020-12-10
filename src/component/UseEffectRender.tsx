@@ -6,8 +6,11 @@ const UseEffectRender: React.FC = () => {
 
   useEffect(() => {
     const loadUser = async () => {
-      const user: UserType = await fetchUser()
-      setUser(user)
+      const user: UserType | string = await fetchUser()
+
+      if (user) {
+        setUser(user)
+      }
     }
 
     loadUser()
