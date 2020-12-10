@@ -6,6 +6,7 @@ import Render from './component/Render'
 import RenderInput from './component/RenderInput'
 import FrameworkList, { Framework } from './component/FrameworkList'
 import UseEffectRender from './component/UseEffectRender'
+import MockServer from './component/MockServer'
 
 const App: React.FC = () => {
   // RenderInputコンポーネントにpropsで送る
@@ -37,6 +38,7 @@ const App: React.FC = () => {
         <RenderInput outputConsole={output} />
         <FrameworkList frameworks={frameworkList} />
         <UseEffectRender />
+        <MockServer />
       </header>
     </div>
   )
