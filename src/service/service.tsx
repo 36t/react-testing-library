@@ -25,6 +25,10 @@ export type UserType = {
 }
 
 export const fetchUser = async (): Promise<UserType> => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/users/1')
-  return res.data as UserType
+  try {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/users/1')
+    return response.data as UserType
+  } catch (error) {
+    return error
+  }
 }
