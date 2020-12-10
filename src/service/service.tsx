@@ -29,6 +29,8 @@ export const fetchUser = async (): Promise<UserType> => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/users/1')
     return response.data as UserType
   } catch (error) {
-    return error
+    return error.message
+    // return Promise.reject(error): rejectされるだけで処理がここで止まる
+    // throw new Error(error): コンパイルエラーでそもそも使えない
   }
 }
