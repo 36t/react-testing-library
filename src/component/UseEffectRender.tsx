@@ -5,12 +5,12 @@ const UseEffectRender: React.FC = () => {
   const [user, setUser] = useState({} as UserType)
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const loadUser = async () => {
       const user: UserType = await fetchUser()
       setUser(user)
     }
 
-    fetchUserData()
+    loadUser()
   }, [])
 
   return (
