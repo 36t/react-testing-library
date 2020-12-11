@@ -17,16 +17,6 @@ const UseEffectRender: React.FC = () => {
         console.log(error)
         setError('ユーザー情報を取得できませんでした。')
       })
-    // const user: UserType | Error = await fetchUser()
-
-    // if (user.username) {
-    //   const { username } = user
-
-    //   setUsername(username)
-    //   setClicked(true)
-    // } else {
-    //   setError('ユーザー情報を取得できませんでした。')
-    // }
   }
 
   const buttonText = clicked ? 'ローディング終了' : '読み込み開始'
