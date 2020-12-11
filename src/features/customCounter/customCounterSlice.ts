@@ -11,7 +11,8 @@ export const loadNumber = createAsyncThunk('fetch/dummy', async (num: number) =>
 })
 
 // APIにアクセスする非同期の関数
-export const loadUser = createAsyncThunk('fetch/api', async () => {
+// Useranme: jsonplaceholderの命名に倣った
+export const loadUsername = createAsyncThunk('fetch/api', async () => {
   const response = await fetchUser()
   const { username } = response
   return username as string
@@ -79,13 +80,13 @@ export const customCounterSlice = createSlice({
       state.value = 0
     })
 
-    // loadUserが正常終了した場合
-    builder.addCase(loadUser.fulfilled, (state, action: PayloadAction<string>) => {
+    // loadUsernameが正常終了した場合
+    builder.addCase(loadUsername.fulfilled, (state, action: PayloadAction<string>) => {
       state.username = action.payload
     })
 
-    // loadUserが失敗した場合
-    builder.addCase(loadUser.rejected, (state) => {
+    // loadUsernameが失敗した場合
+    builder.addCase(loadUsername.rejected, (state) => {
       state.username = 'anonymous'
     })
   },
