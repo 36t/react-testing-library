@@ -8,6 +8,7 @@ import FrameworkList, { Framework } from 'component/FrameworkList'
 import UseEffectRender from 'component/UseEffectRender'
 import MockServer from 'component/MockServer'
 import Redux from 'component/Redux'
+import ReduxAsync from 'component/ReduxAsync'
 
 const App: React.FC = () => {
   // RenderInputコンポーネントにpropsで送る
@@ -41,6 +42,7 @@ const App: React.FC = () => {
         <UseEffectRender />
         <MockServer />
         <Redux />
+        <ReduxAsync />
       </header>
     </div>
   )
