@@ -1,7 +1,7 @@
 // createAsyncThunk: 非同期系の関数を扱う際に利用
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import { sleep } from 'utils/sleep'
-import { fetchUser } from 'service/service'
+import { fetchUser, UserType, ResponseType } from 'service/service'
 import { RootState } from 'app/store'
 
 // 2秒待って、引数の数字を返す
@@ -13,9 +13,14 @@ export const loadNumber = createAsyncThunk('fetch/dummy', async (num: number) =>
 // APIにアクセスする非同期の関数
 // Useranme: jsonplaceholderの命名に倣った
 export const loadUsername = createAsyncThunk('fetch/api', async () => {
-  const response = await fetchUser()
-  const { username } = response
-  return username as string
+  const response: ResponseType = await fetchUser()
+  const { username } = response.data as UserType
+  return username
+
+  // const response: UserType | string = await fetchUser()
+  // console.log(response)
+  // const { username } = response
+  // return username as string
 })
 
 export interface CustomCounterState {
@@ -82,11 +87,13 @@ export const customCounterSlice = createSlice({
 
     // loadUsernameが正常終了した場合
     builder.addCase(loadUsername.fulfilled, (state, action: PayloadAction<string>) => {
+      console.log('①')
       state.username = action.payload
     })
 
     // loadUsernameが失敗した場合
     builder.addCase(loadUsername.rejected, (state) => {
+      console.log('②')
       state.username = 'anonymous'
     })
   },
