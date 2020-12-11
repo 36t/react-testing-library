@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { fetchUser, UserType } from 'service/service'
+import { fetchUser, UserType } from 'service/userService'
 
 const UseEffectRender: React.FC = () => {
   const [clicked, setClicked] = useState(false)
