@@ -16,11 +16,6 @@ export const loadUsername = createAsyncThunk('fetch/api', async () => {
   const response: ResponseType = await fetchUser()
   const { username } = response.data as UserType
   return username
-
-  // const response: UserType | string = await fetchUser()
-  // console.log(response)
-  // const { username } = response
-  // return username as string
 })
 
 export interface CustomCounterState {
@@ -87,13 +82,11 @@ export const customCounterSlice = createSlice({
 
     // loadUsernameが正常終了した場合
     builder.addCase(loadUsername.fulfilled, (state, action: PayloadAction<string>) => {
-      console.log('①')
       state.username = action.payload
     })
 
     // loadUsernameが失敗した場合
     builder.addCase(loadUsername.rejected, (state) => {
-      console.log('②')
       state.username = 'anonymous'
     })
   },
