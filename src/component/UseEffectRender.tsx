@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchUser, UserType } from '../service/service'
+import { fetchUser, UserType } from 'service/service'
 
 const UseEffectRender: React.FC = () => {
   const [user, setUser] = useState({} as UserType)

@@ -1,8 +1,8 @@
 // createAsyncThunk: 非同期系の関数を扱う際に利用
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import { sleep } from '../../utils/sleep'
-import { fetchUser } from '../../service/service'
-import { RootState } from '../../app/store'
+import { sleep } from 'utils/sleep'
+import { fetchUser } from 'service/service'
+import { RootState } from 'app/store'
 
 // 2秒待って、引数の数字を返す
 export const loadNumber = createAsyncThunk('fetch/dummy', async (num: number) => {

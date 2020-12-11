@@ -1,12 +1,12 @@
 import React from 'react'
-import { Counter } from './features/counter/Counter'
-import './App.css'
+import { Counter } from 'features/counter/Counter'
+import 'App.css'
 
-import Render from './component/Render'
-import RenderInput from './component/RenderInput'
-import FrameworkList, { Framework } from './component/FrameworkList'
-import UseEffectRender from './component/UseEffectRender'
-import MockServer from './component/MockServer'
+import Render from 'component/Render'
+import RenderInput from 'component/RenderInput'
+import FrameworkList, { Framework } from 'component/FrameworkList'
+import UseEffectRender from 'component/UseEffectRender'
+import MockServer from 'component/MockServer'
 
 const App: React.FC = () => {
   // RenderInputコンポーネントにpropsで送る
