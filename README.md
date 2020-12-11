@@ -46,6 +46,9 @@ yarn lint:fix
     - slice: [react\-testing\-library/customCounterSlice\.ts](https://github.com/36t/react-testing-library/blob/master/src/features/customCounter/customCounterSlice.ts)
     - store: [react\-testing\-library/store\.ts](https://github.com/36t/react-testing-library/blob/master/src/app/store.ts)
     - test: [react\-testing\-library/ExtraReducer\.test\.ts](https://github.com/36t/react-testing-library/blob/master/src/features/customCounter/ExtraReducer.test.ts)
-7. Integration test
+7. Integration test (not async)
     - component: [react\-testing\-library/Redux\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/Redux.tsx)
     - test: [react\-testing\-library/Redux\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/Redux.test.tsx)
+8. Integration test (async)
+    - component: [react\-testing\-library/ReduxAsync\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/ReduxAsync.tsx)
+    - test: [react\-testing\-library/ReduxAsync\.test\.tsx](https://github.com/36t/react-testing-library/blob/master/src/component/ReduxAsync.test.tsx)
