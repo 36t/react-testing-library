@@ -76,7 +76,7 @@ describe('Redux Integration Test', () => {
     // ボタンクリック
     userEvent.click(screen.getByText('IncrementByAmount'))
 
-    // 2回クリックしたので-2
+    // 2000を代入しているので
     expect(screen.getByTestId('count-value')).toHaveTextContent('2000')
   })
 })
