@@ -17,7 +17,7 @@ export const loadUser = createAsyncThunk('fetch/api', async () => {
   return username as string
 })
 
-interface CustomCounterState {
+export interface CustomCounterState {
   mode: number
   value: number
   username: string
