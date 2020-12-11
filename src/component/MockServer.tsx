@@ -7,16 +7,26 @@ const UseEffectRender: React.FC = () => {
   const [error, setError] = useState('')
 
   const loadUser = async () => {
-    const user: UserType | string = await fetchUser()
+    await fetchUser()
+      .then((response) => {
+        const { username } = response.data as UserType
+        setUsername(username)
+        setClicked(true)
+      })
+      .catch((error) => {
+        console.log(error)
+        setError('ユーザー情報を取得できませんでした。')
+      })
+    // const user: UserType | Error = await fetchUser()
 
-    if (user.username) {
-      const { username } = user
+    // if (user.username) {
+    //   const { username } = user
 
-      setUsername(username)
-      setClicked(true)
-    } else {
-      setError('ユーザー情報を取得できませんでした。')
-    }
+    //   setUsername(username)
+    //   setClicked(true)
+    // } else {
+    //   setError('ユーザー情報を取得できませんでした。')
+    // }
   }
 
   const buttonText = clicked ? 'ローディング終了' : '読み込み開始'
