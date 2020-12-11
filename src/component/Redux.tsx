@@ -16,11 +16,20 @@ const Redux: React.FC = () => {
     <div>
       <h3>Redux Integration Test</h3>
       <div>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <span data-testid="count-value">{count}</span>
-        <button onClick={() => dispatch(decrement())}>-</button>
-        <button onClick={() => dispatch(incrementByAmount(number | 0))}>IncrementByAmount </button>
-        <input type="text" placeholder="Enter" value={number} onChange={(event) => setInputValue(event.target.value)} />
+        <p data-testid="count-value">{count}</p>
+        <div>
+          <button onClick={() => dispatch(increment())}>+</button>
+          <button onClick={() => dispatch(decrement())}>-</button>
+        </div>
+        <div>
+          <button onClick={() => dispatch(incrementByAmount(number | 0))}>IncrementByAmount </button>
+          <input
+            type="text"
+            placeholder="Enter"
+            value={number}
+            onChange={(event) => setInputValue(event.target.value)}
+          />
+        </div>
       </div>
     </div>
   )
