@@ -1,32 +1,20 @@
 // createAsyncThunk: 非同期系の関数を扱う際に利用
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-import axios from 'axios'
-
+import { sleep } from '../../utils/sleep'
+import { fetchUser } from '../../service/service'
 import { RootState } from '../../app/store'
-
-// 指定した時間(m秒)だけ待機
-const sleep = (msec: number) => {
-  const d1: number = new Date().valueOf()
-  // 開始時間と今の時間がmsecよりも小さかったらwhile繰り返す
-  while (true) {
-    const d2: number = new Date().valueOf()
-    if (d2 - d1 > msec) {
-      return
-    }
-  }
-}
 
 // 2秒待って、引数の数字を返す
 export const loadNumber = createAsyncThunk('fetch/dummy', async (num: number) => {
   await sleep(2000)
-  return num
+  return num as number
 })
 
 // APIにアクセスする非同期の関数
-export const fetchJSON = createAsyncThunk('fetch/api', async () => {
-  const res = await axios.get('http://jsonplaceholder.typicode.com/users/1')
-  const { username } = res.data
-  return username
+export const loadUser = createAsyncThunk('fetch/api', async () => {
+  const response = await fetchUser()
+  const { username } = response
+  return username as string
 })
 
 interface CustomCounterState {
@@ -91,13 +79,13 @@ export const customCounterSlice = createSlice({
       state.value = 0
     })
 
-    // fetchJSONが正常終了した場合
-    builder.addCase(fetchJSON.fulfilled, (state, action: PayloadAction<string>) => {
+    // loadUserが正常終了した場合
+    builder.addCase(loadUser.fulfilled, (state, action: PayloadAction<string>) => {
       state.username = action.payload
     })
 
-    // fetchJSONが失敗した場合
-    builder.addCase(fetchJSON.rejected, (state) => {
+    // loadUserが失敗した場合
+    builder.addCase(loadUser.rejected, (state) => {
       state.username = 'anonymous'
     })
   },
