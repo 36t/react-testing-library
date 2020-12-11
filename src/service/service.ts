@@ -29,24 +29,6 @@ export type ResponseType = {
 }
 
 export const fetchUser = async (): Promise<ResponseType> => {
-  /*
-  try {
-    // const response = await axios.get('https://jsonplaceholder.typicode.com/users/1')
-    const response = await axios.get('https://jsonplaceholder.typicode.com/error/501')
-    return response.data as UserType
-  } catch (error) {
-    // return error.message
-    throw new Error(error.message)
-    // return Promise.reject(error): rejectされるだけで処理がここで止まる
-    // throw new Error(error): コンパイルエラーでそもそも使えない
-  }
-  */
-
+  // fetchUserの使用箇所でロジックが異なるため、通信後の処理は使用コンポーネントで調整するようにしている
   return await axios.get('https://jsonplaceholder.typicode.com/users/1')
-
-  // if (response.status !== 200) {
-  //   throw new Error(`Error: status code ${response.status}, status text ${response.statusText}`)
-  // }
-
-  // return response.data as UserType
 }
