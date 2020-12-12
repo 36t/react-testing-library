@@ -9,6 +9,7 @@ import UseEffectRender from 'component/UseEffectRender'
 import MockServer from 'component/MockServer'
 import Redux from 'component/Redux'
 import ReduxAsync from 'component/ReduxAsync'
+import CustomHooks from 'component/CustomHooks'
 
 const App: React.FC = () => {
   // RenderInputコンポーネントにpropsで送る
@@ -43,6 +44,7 @@ const App: React.FC = () => {
         <MockServer />
         <Redux />
         <ReduxAsync />
+        <CustomHooks />
       </header>
     </div>
   )
