@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCounter } from 'hoooks/useCounter'
+import { useCounter } from 'hooks/useCounter'
 
 const CustomHooks: React.FC = () => {
   // カスタムHooks
